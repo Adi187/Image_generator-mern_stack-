@@ -10,7 +10,11 @@ const router=express.Router()
 
 const configuration=new Configuration({
 <<<<<<< HEAD
+<<<<<<< HEAD
     apiKey:process.env.OPENAI_API_KEY
+=======
+    apikey:process.env.OPEN_API_KEY,
+>>>>>>> parent of eaf2b86 (made correction in the api key)
 =======
     apikey:process.env.OPEN_API_KEY,
 >>>>>>> parent of eaf2b86 (made correction in the api key)
@@ -34,7 +38,11 @@ router.route('/').post(async(req,res)=>{
      });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      const image=aiResponse.data.data[0].b64_json;
+=======
+     const image=arResponse.data.data[0].b64_json;
+>>>>>>> parent of eaf2b86 (made correction in the api key)
 =======
      const image=arResponse.data.data[0].b64_json;
 >>>>>>> parent of eaf2b86 (made correction in the api key)
