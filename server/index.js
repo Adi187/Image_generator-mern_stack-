@@ -10,9 +10,14 @@ app.use(cors());
 app.use(express.json({limit:'50mb'}));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 app.use('api/v1/post',postRoutes)
 app.use('api/v1/dalle',dalleRoutes)
 
+=======
+app.use('api/v1/post',PostRoutes)
+app.use('api,dalle/v1/',dalle)
+>>>>>>> parent of eaf2b86 (made correction in the api key)
 =======
 app.use('api/v1/post',PostRoutes)
 app.use('api,dalle/v1/',dalle)
