@@ -1,13 +1,15 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
+import cors from 'cors';
 import {Configuration,OpenAIApi} from 'openai';
 
-
+import Post from '../mongodb/models/post.js';
 
 dotenv.config();
 
 const router=express.Router()
 
+<<<<<<< HEAD
 const configuration=new Configuration({
     apiKey:process.env.OPENAI_API_KEY,
 })
@@ -38,3 +40,5 @@ router.route('/').post(async(req,res)=>{
    }
 });
 export default router;
+=======
+>>>>>>> parent of d766ddd (configured the OpenAI api)
