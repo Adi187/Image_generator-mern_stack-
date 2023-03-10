@@ -1,45 +1,33 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
+
 import connectDB from './mongodb/connect.js';
 import postRoutes from './routes/postRoutes.js';
-import dalleRoutes from './routes/dalleRoutes.js'
+import dalleRoutes from './routes/dalleRoutes.js';
+
 dotenv.config();
-const app=express();
+
+const app = express();
 app.use(cors());
-app.use(express.json({limit:'50mb'}));
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-app.use('api/v1/post',postRoutes)
-app.use('api/v1/dalle',dalleRoutes)
+app.use(express.json({ limit: '50mb' }));
 
-=======
-app.use('api/v1/post',PostRoutes)
-app.use('api,dalle/v1/',dalle)
->>>>>>> parent of eaf2b86 (made correction in the api key)
-=======
-app.use('api/v1/post',PostRoutes)
-app.use('api,dalle/v1/',dalle)
->>>>>>> parent of eaf2b86 (made correction in the api key)
-=======
-app.use('api/v1/post',PostRoutes)
-app.use('api,dalle/v1/',dalle)
->>>>>>> parent of eaf2b86 (made correction in the api key)
-app.get('/',async(req,res)=>{
-    res.send('hello from DALL-E')
-})
+app.use('/api/v1/post', postRoutes);
+app.use('/api/v1/dalle', dalleRoutes);
 
-const startServer=async ()=>{
-    
-    try{
-      connectDB(process.env.MONGODB_URL);
-    
+app.get('/', async (req, res) => {
+  res.status(200).json({
+    message: 'Hello from DALL.E!',
+  });
+});
 
-    app.listen(8080,()=>console.log('server has started on the port http://localhost:8080'))
-    } catch (error){
-     console.log(error)
-    }
-}
+const startServer = async () => {
+  try {
+    connectDB(process.env.MONGODB_URL);
+    app.listen(8080, () => console.log('Server started on port 8080'));
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 startServer();
